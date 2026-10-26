@@ -32,7 +32,8 @@ ifeq ("$(origin T)", "command line")
 VEX_SDK_PATH = $(T)
 endif
 # backup if still not set
-VEX_SDK_PATH ?= ${HOME}/sdk
+# default vex sdk path under an arch install of linux
+VEX_SDK_PATH ?= ${HOME}/.config/Code/User/globalStorage/vexrobotics.vexcode/sdk/cpp/V5/V5_20240802_15_00_00/
 
 # printf_float flag name passed from app (not used in this version)
 ifeq ("$(origin PRINTF_FLOAT)", "command line")
