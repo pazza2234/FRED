@@ -2,6 +2,9 @@
 #include "vex.h"
 
 namespace fred{
+    // Brain
+    extern vex::brain Brain;   
+
     // Controller
     extern vex::controller Controller;
 
@@ -20,6 +23,6 @@ namespace fred{
     extern vex::motor_group leftDrive;
     extern vex::motor_group rightDrive;
 
-    // Smartdrive
-    extern vex::smartdrive smartDrivetrain;
+    // pneumatics 
+    extern vex::pneumatics claw;
 }

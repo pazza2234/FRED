@@ -62,5 +62,10 @@ void controlDrivetrain() {
 
 
 void fred_usercontrol(void) {
+    fred::Brain.Screen.clearScreen(); // Why are we doing this?
     vex::thread driveThread = vex::thread(controlDrivetrain);
+
+    // Claw
+    fred::Controller.ButtonL2.pressed([](){fred::claw.open(); });
+    fred::Controller.ButtonR2.pressed([](){fred::claw.close();});
 }

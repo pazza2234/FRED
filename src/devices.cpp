@@ -4,6 +4,7 @@
 using namespace vex;
 
 namespace fred {
+    brain Brain = brain();
     controller Controller = controller();
     inertial inertialSensor = inertial(PORT10, right);
 
@@ -15,14 +16,5 @@ namespace fred {
     motor_group leftDrive = motor_group(leftFrontMotor, leftBackMotor);
     motor_group rightDrive = motor_group(rightFrontMotor, rightBackMotor);
 
-    smartdrive smartDrivetrain = smartdrive(
-        leftDrive,
-        rightDrive,
-        inertialSensor,
-        260,
-        429,
-        305,
-        mm,
-        1.0
-    );
+    pneumatics claw = pneumatics(Brain.ThreeWirePort.A);
 }
