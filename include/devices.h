@@ -1,58 +1,25 @@
 #pragma once
 #include "vex.h"
 
-using namespace vex;
-
 namespace fred{
     // Controller
-    controller Controller = controller();
+    extern vex::controller Controller;
 
     // Sensors
-    inertial inertialSensor = inertial(PORT10, right);
+    extern vex::inertial inertialSensor;
 
     // Motors
 
     // Drivetrain motors
-    motor leftFrontMotor = motor (
-        PORT1,
-        ratio6_1,
-        false
-    );
-    motor leftBackMotor = motor (
-        PORT8,
-        ratio6_1,
-        false
-    );
-    motor rightFrontMotor = motor (
-        PORT3,
-        ratio6_1,
-        true
-    );
-    motor rightBackMotor = motor (
-        PORT5,
-        ratio6_1,
-        true
-    );
+    extern vex::motor leftFrontMotor;
+    extern vex::motor leftBackMotor;
+    extern vex::motor rightFrontMotor;
+    extern vex::motor rightBackMotor;
 
     // Motor Groups
-    motor_group leftDrive = motor_group (
-        leftFrontMotor,
-        leftBackMotor
-    );
-    motor_group rightDrive = motor_group (
-        rightFrontMotor,
-        rightBackMotor
-    );
+    extern vex::motor_group leftDrive;
+    extern vex::motor_group rightDrive;
 
     // Smartdrive
-    smartdrive smartDrivetrain = smartdrive (
-        leftDrive,
-        rightDrive,
-        inertialSensor,
-        260,
-        429, // verify
-        305,
-        mm,
-        1.0
-    );
+    extern vex::smartdrive smartDrivetrain;
 }
